@@ -1,0 +1,52 @@
+public class Superhero {
+    private String name;
+    private int strength;
+    private int agility;
+    private int intelligence;
+
+    public Superhero(String name, int strength, int agility, int intelligence) {
+        this.name = name;
+        this.strength = strength;
+        this.agility = agility;
+        this.intelligence = intelligence;
+    }
+
+    public int calculateOverallStrength() {
+        // You can define your own formula to calculate overall strength here.
+        // For example, you might weigh strength higher than agility and intelligence.
+        return strength * 2 + agility + intelligence;
+    }
+
+    // Getters and setters for the attributes (name, strength, agility, intelligence).
+
+    // You can also override toString() to display superhero details nicely.
+    @Override
+    public String toString() {
+        return "Superhero: " + name +
+               "\nStrength: " + strength +
+               "\nAgility: " + agility +
+               "\nIntelligence: " + intelligence;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Superhero superman = new Superhero("Superman", 100, 90, 80);
+        Superhero batman = new Superhero("Batman", 80, 85, 95);
+
+        System.out.println(superman);
+        System.out.println("Overall Strength: " + superman.calculateOverallStrength());
+
+        System.out.println("\n" + batman);
+        System.out.println("Overall Strength: " + batman.calculateOverallStrength());
+
+        // Compare the overall strengths of superheroes.
+        if (superman.calculateOverallStrength() > batman.calculateOverallStrength()) {
+            System.out.println("\nSuperman is stronger than Batman!");
+        } else if (superman.calculateOverallStrength() < batman.calculateOverallStrength()) {
+            System.out.println("\nBatman is stronger than Superman!");
+        } else {
+            System.out.println("\nSuperman and Batman have equal strength!");
+        }
+    }
+}
+
